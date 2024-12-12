@@ -70,6 +70,9 @@
 </style>
 
 <script>
+    const audio = document.getElementById("audio");
+    audio.preload = "auto"; // 提前加载音频文件
+    
     document.addEventListener("DOMContentLoaded", () => {
         const textElement = document.getElementById("animated-text");
         const text = textElement.innerText; // 获取原始文本
@@ -94,7 +97,7 @@
             Array.from(textElement.children).forEach((span, index) => {
                 setTimeout(() => {
                     span.classList.add("visible");
-                }, index * 100); // 每个字符延迟 100ms
+                }, index * 250); // 每个字符延迟 250ms
             });
         });
     });
